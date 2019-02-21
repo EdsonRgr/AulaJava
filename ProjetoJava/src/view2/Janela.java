@@ -10,6 +10,9 @@ import javax.swing.JTextField;
 public class Janela extends JFrame{
 	
 	JTextField txtresult = new JTextField("0");
+	JButton btnExibir = new JButton("Exibir ");
+	JButton btnEditar = new JButton("Editar ");
+	JButton btnAjuda = new JButton("Ajuda ");
 	
 	
 	
@@ -54,6 +57,15 @@ public class Janela extends JFrame{
 		
 		paine.add(txtresult);
 		txtresult.setBounds(10 , 30, 322, 50);
+		
+		//painel 
+		paine.add(btnExibir);
+		btnExibir.setBounds(10, 2, 110, 30);
+		paine.add(btnEditar);
+		btnEditar.setBounds(120, 2, 110, 30);
+		paine.add(btnAjuda);
+		btnAjuda.setBounds(220,2,110,30);
+		
 		
 		//primeira linha
 		paine.add(btnMC);
@@ -123,20 +135,7 @@ public class Janela extends JFrame{
 		paine.add(btnIgual);
 		btnIgual.setBounds(270 ,260 , 60, 85);
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		this.setSize(350,500); // comando que define o tamanho da janela
+		this.setSize(350,400); // comando que define o tamanho da janela
 		this.setVisible(true); // comando que define a visualição da janela 
 		this.setResizable(false);//comando que nao permite a alteração no tamanha da janela
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//comando que define que a janela seja encerrada
