@@ -9,7 +9,7 @@ public class Cadastro {
 		pf.setNome("Edson");
 		pf.setEnd("Rua tal de tal");
 		pf.setBairro("São Gonçalo");
-		pf.setCep(00000-000);
+		pf.setCep(00000000);
 		pf.setCpf(88888888-8854);
 		pf.setIdade(21);
 		pf.setRg(99999999-99);
@@ -19,14 +19,14 @@ public class Cadastro {
 		pj.setCep(0000000-00);
 		pj.setEnd("Rua Alguma Coisa");
 		
-		
-		System.out.println(pf.getNome());
-		System.out.println(pf.getEnd());
-		System.out.println(pf.getBairro());
-		System.out.println(pf.getCep());
-		System.out.println(pf.getcpf());
-		System.out.println(pf.getidade());
-		System.out.println(pf.getRg());
+		System.out.println("Pessoa Fisica");
+		System.out.println("Nome: " + pf.getNome());
+		System.out.println("Endereço: " +pf.getEnd());
+		System.out.println("Bairro: " +pf.getBairro());
+		System.out.println("Cep: " + pf.getCep());
+		System.out.println("CPF: " +pf.getcpf());
+		System.out.println("Idade: " +pf.getidade());
+		System.out.println("RG: " +pf.getRg());
 		
 		System.out.println(pj.getRazaosocial());
 		System.out.println(pj.getBairro());
