@@ -1,7 +1,7 @@
 package view2;
 
 import java.awt.Container; // biblioteca para o container 
-import java.awt.TextField;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -65,29 +65,32 @@ public class Janela extends JFrame{
 		paine.setLayout(null);// para nao trabalhar com nenhum layout
 		
 		paine.add(txtresult);
-		txtresult.setBounds(10 , 30, 322, 50);
+		txtresult.setBounds(10 , 32 , 320, 50);
 		
 		//painel 
 		paine.add(btnExibir);
-		btnExibir.setBounds(10, 2, 110, 30);
+		btnExibir.setBounds(10, 2, 100, 30);
 		
 		paine.add(btnEditar);
-		btnEditar.setBounds(120, 2, 110, 30);
+		btnEditar.setBounds(120, 2, 100, 30);
 		
 		paine.add(btnAjuda);
-		btnAjuda.setBounds(220,2,110,30);
+		btnAjuda.setBounds(230,2,100,30);
 		
 		
 		
 		//primeira linha
 		paine.add(btnMC);
 		btnMC.setBounds(10 ,80 , 60, 40); // (coluna, linha,espaço,altura ) 
+		btnMC.setMargin(new Insets(1,1,1,1) );// codiga para mudar margin do botão
 		
 		paine.add(btnMR);
 		btnMR.setBounds(75 ,80 , 60, 40);
+		btnMR.setMargin(new Insets(1,1,1,1) );
 		
 		paine.add(btnMS);
 		btnMS.setBounds(140 ,80 , 60, 40);
+		btnMS.setMargin(new Insets(1,1,1,1) );
 		
 		paine.add(btnMmenos);
 		btnMmenos.setBounds(205 ,80 , 60, 40);
@@ -169,8 +172,16 @@ public class Janela extends JFrame{
 		});
 		
 		
-		paine.add(btnDiv);
+		paine.add(btnDiv);//botão de divisão
 		btnDiv.setBounds(205 ,170 , 60, 40);
+		btnDiv.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor1 = Double.parseDouble(txtresult.getText());
+				sinal = "divisao";
+				txtresult.setText("0");
+			}
+		});
+		
 		
 		paine.add(btnPor);
 		btnPor.setBounds(270 ,170 , 60, 40);
@@ -225,8 +236,17 @@ public class Janela extends JFrame{
 		});
 		
 		
-		paine.add(btnMult);
+		paine.add(btnMult);//botão de multiplicação
 		btnMult.setBounds(205 ,215 , 60, 40);
+		btnMult.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor1 = Double.parseDouble(txtresult.getText());
+				sinal = "multiplicacao";
+				txtresult.setText("0");
+			}
+		});
+		
+		
 		
 		paine.add(btnFrac);
 		btnFrac.setBounds(270 ,215 , 60, 40);
@@ -281,8 +301,15 @@ public class Janela extends JFrame{
 		});
 		
 		
-		paine.add(btnSub);
+		paine.add(btnSub); // botão de subtração 
 		btnSub.setBounds(205 ,260 , 60, 40);
+		btnSub.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor1 = Double.parseDouble(txtresult.getText());
+				sinal = "subtracao";
+				txtresult.setText("0");
+			}
+		});
 		
 		
 		//Sexta linha
@@ -325,6 +352,15 @@ public class Janela extends JFrame{
 				if(sinal.equals("soma")) {
 					txtresult.setText(mat.soma(valor1, valor2) + "");
 				}
+				else if (sinal.equals("subtracao")) {
+					txtresult.setText(mat.sub(valor1, valor2) + "");
+				}
+				else if (sinal.equals("multiplicacao")) {
+					txtresult.setText(mat.mult(valor1, valor2) + "");				
+				}
+				else if (sinal.equals("divisao")) {
+					txtresult.setText(mat.div(valor1, valor2) + "");					
+				}
 				
 			}
 		});
@@ -345,11 +381,8 @@ public class Janela extends JFrame{
 		});
 	
 	}
-	public static void main(String[] args) {
-		Janela janela1 = new Janela();
-		
-		
-
+	public static void main(String[]args) {
+		Janela calc = new Janela();
 	}
 
 }

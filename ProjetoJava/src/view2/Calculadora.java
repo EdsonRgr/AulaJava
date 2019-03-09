@@ -17,7 +17,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JTextField;
 
-import calculos.FuncoesMatematicas;
+import view2.OperacoesMat;
 
 public class Calculadora extends JFrame {
 	
@@ -79,7 +79,7 @@ public class Calculadora extends JFrame {
 	JButton nove = new JButton("9");
 	JButton zero = new JButton("0");
 	
-	FuncoesMatematicas mat = new FuncoesMatematicas();
+	OperacoesMat mat = new OperacoesMat();
 	String sinal = null;
 	double valor1 = 0, valor2 = 0;
 	
