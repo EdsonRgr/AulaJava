@@ -9,6 +9,7 @@ import javax.swing.JButton; // biblioteca para os botões
 import javax.swing.JFrame;
 import javax.swing.JTextField; 
 import view2.OperacoesMat;
+import view2.ClassM;
 
 
 public class Janela extends JFrame{
@@ -66,6 +67,7 @@ public class Janela extends JFrame{
 	
 	
 	OperacoesMat mat = new OperacoesMat();
+	ClassM matM = new ClassM();
 	String sinal= null;
 	double valor1 = 0, valor2 = 0 ;
 	
@@ -241,15 +243,33 @@ public class Janela extends JFrame{
 		//outras funçoes
 		paine.add(btnRQ);
 		btnRQ.setBounds(270 ,125 , 60, 40);
+		btnRQ.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor1 = Double.parseDouble(txtresult.getText());
+				sinal = "raizq";
+			}
+		});
+		
 		
 		paine.add(btnMoM);
 		btnMoM.setBounds(205,125 , 60, 40);
 		
+		
+		
 		paine.add(btnPor);
 		btnPor.setBounds(270 ,170 , 60, 40);
+	
 		
 		paine.add(btnFrac);
 		btnFrac.setBounds(270 ,215 , 60, 40);
+		btnFrac.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor1 = Double.parseDouble(txtresult.getText());
+				sinal = "fracao";
+				txtresult.setText("0");
+			}
+		});
+		
 		
 		
 		//operaçoes simples
@@ -297,10 +317,36 @@ public class Janela extends JFrame{
 		paine.add(btnMC);
 		btnMC.setBounds(10 ,80 , 60, 40); // (coluna, linha,espaço,altura ) 
 		btnMC.setMargin(new Insets(1,1,1,1) );// codiga para mudar margin do botão
+		btnMC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor1 = Double.parseDouble(txtresult.getText());
+				sinal = "MC";
+				txtresult.setText("0");
+			}
+		});
+		
+		
 		
 		paine.add(btnMR);
 		btnMR.setBounds(75 ,80 , 60, 40);
 		btnMR.setMargin(new Insets(1,1,1,1) );
+		btnMR.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				valor2 = Double.parseDouble(txtresult.getText());
+
+				if(sinal.equals("Mmais")) {
+					txtresult.setText(matM.Mmais(valor1, valor2) + "");
+				}
+					
+				else if (sinal.equals("Mmenos")) {
+						txtresult.setText(matM.Mmenos(valor1, valor2) + "");
+				}
+				
+				
+				}	
+				}
+			);
 		
 		paine.add(btnMS);
 		btnMS.setBounds(140 ,80 , 60, 40);
@@ -311,6 +357,13 @@ public class Janela extends JFrame{
 		
 		paine.add(btnMmais);
 		btnMmais.setBounds(270 ,80 , 60, 40);
+		btnMmais.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor1 = Double.parseDouble(txtresult.getText());
+				sinal = "Mmais";
+				txtresult.setText("0");
+			}
+		});
 		
 
 		//botoes de apagar
@@ -374,7 +427,15 @@ public class Janela extends JFrame{
 				else if (sinal.equals("divisao")) {
 					txtresult.setText(mat.div(valor1, valor2) + "");					
 				}
-				
+				else if (sinal.equals("raizq")) {
+					txtresult.setText(mat.RQ(valor1) + "");
+				}
+				else if (sinal.equals("Mmais")) {
+					txtresult.setText(matM.Mmais(valor1, valor2) + "" );
+				}
+				else if (sinal.equals("Mmenos")) {
+					txtresult.setText(matM.Mmenos(valor1, valor2) + "");
+				}
 			}
 		});
 

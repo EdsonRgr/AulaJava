@@ -8,7 +8,7 @@ public class FuncoesMatematicas {
 	System.out.println("Multiplicação: " + obj.mult(7, 7));
 	System.out.println("Divisão : "+obj.div(8, 2));
 	System.out.println("Subtração : "+obj.sub(8, 8));
-	System.out.println("Potencia, numero dps expoente :"+obj.pt(5, 1 ));
+	System.out.println("Potencia, numero dps expoente :"+obj.pt(1, 7 ));
 	System.out.println("potencia com for : " + obj.potenciacao(5, 1));
 	}
 

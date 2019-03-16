@@ -14,6 +14,12 @@ public double div (double div1 , double div2) {
 public double sub (double sub1 , double sub2) {
 	return sub1-sub2;
 }
+public double RQ (double x ) {
+	return Math.sqrt(x);
+
+}
+
+
 
 
 }
