@@ -2,9 +2,13 @@ package view;
 
 import java.awt.Container;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JRadioButton;
+import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTextField;
 
 public class ProjetoCadastro extends JFrame {
@@ -28,7 +32,15 @@ public class ProjetoCadastro extends JFrame {
 	JLabel lblRg = new JLabel("RG :");
 			
 	
-	JLabel lblSexo = new JLabel("Sexo ");
+	JLabel lblSexo = new JLabel("Sexo :");
+
+	//ButtonGroup gruporadio = new ButtonGroup();
+	//ButtonGroup.add(rbMasc);
+	//ButtonGroup.add(rbFemi);
+	
+	JRadioButton rbMasc = new JRadioButton("Masculino");
+	JRadioButton rbFemi = new JRadioButton("Feminino");
+	
 	
 	JLabel lblCep = new JLabel("CEP : ");
 	JTextField txtCep = new JTextField("");
@@ -87,13 +99,37 @@ public class ProjetoCadastro extends JFrame {
 		paine.add(lblRg);
 		lblRg.setBounds(20, 280 , 80, 20);
 		
+		paine.add(lblSexo);
+		lblSexo.setBounds(350, 20 ,  80 , 40);
 		
+		paine.add(rbMasc);
+		rbMasc.setBounds(400, 20, 90, 40);
+		paine.add(rbFemi);
+		rbFemi.setBounds(490, 20, 90, 40);
 		
+		paine.add(lblCep);
+		lblCep.setBounds(350, 70, 80, 40);
+		paine.add(txtCep);
+		txtCep.setBounds(400, 70, 150, 40);
 		
+		paine.add(lblEstado);
+		lblEstado.setBounds(350, 120, 80, 40);
 		
+		paine.add(lblCel);
+		lblCel.setBounds(350, 220 , 80, 40);
+		paine.add(txtCel);
+		txtCel.setBounds(400, 220, 150, 40); //(coluna, linha,espaço,altura )
 		
+		paine.add(lblCpf);
+		lblCpf.setBounds(350, 270,80 , 40);
+		paine.add(txtCpf);
+		txtCpf.setBounds(400, 270, 150, 40); //(coluna, linha,espaço,altura )
 		
+		paine.add(btnSalvar);
+		btnSalvar.setBounds(240, 320, 120, 40);
 		
+		paine.add(btnImprimir);
+		btnImprimir.setBounds(370, 320, 120, 40);
 		
 		
 		
