@@ -34,18 +34,21 @@ public class ProjetoCadastro extends JFrame {
 	
 	JLabel lblSexo = new JLabel("Sexo :");
 
-	//ButtonGroup gruporadio = new ButtonGroup();
-	//ButtonGroup.add(rbMasc);
-	//ButtonGroup.add(rbFemi);
+	JRadioButton[] rdbsexo = new JRadioButton[2];
+	ButtonGroup grupo = new ButtonGroup();{
+		
+		rdbsexo[0] = new JRadioButton("Masculinho");
+		rdbsexo[1] = new JRadioButton("Feminino");
+	}
 	
-	JRadioButton rbMasc = new JRadioButton("Masculino");
-	JRadioButton rbFemi = new JRadioButton("Feminino");
 	
 	
 	JLabel lblCep = new JLabel("CEP : ");
 	JTextField txtCep = new JTextField("");
 	
 	JLabel lblEstado = new JLabel ("ESTADO :");
+	JComboBox <String> cmbEst = new JComboBox <String> ();
+	
 	
 	JLabel lblCel = new JLabel ("Celular :");
 	JTextField txtCel = new JTextField("");
@@ -101,11 +104,14 @@ public class ProjetoCadastro extends JFrame {
 		
 		paine.add(lblSexo);
 		lblSexo.setBounds(350, 20 ,  80 , 40);
+		grupo.add(rdbsexo[0]);
+		grupo.add(rdbsexo[1]);
 		
-		paine.add(rbMasc);
-		rbMasc.setBounds(400, 20, 90, 40);
-		paine.add(rbFemi);
-		rbFemi.setBounds(490, 20, 90, 40);
+		paine.add(rdbsexo[0]);
+		rdbsexo[0].setBounds(400, 20, 100, 40);
+		paine.add(rdbsexo[1]);
+		rdbsexo[1].setBounds(500, 20, 100, 40);
+		
 		
 		paine.add(lblCep);
 		lblCep.setBounds(350, 70, 80, 40);
@@ -114,6 +120,23 @@ public class ProjetoCadastro extends JFrame {
 		
 		paine.add(lblEstado);
 		lblEstado.setBounds(350, 120, 80, 40);
+		paine.add(cmbEst);
+		cmbEst.setBounds(420, 120, 80, 40);
+		cmbEst.addItem("AC");		cmbEst.addItem("AL");
+		cmbEst.addItem("AP");		cmbEst.addItem("AM");
+		cmbEst.addItem("BA");		cmbEst.addItem("CE");
+		cmbEst.addItem("DF");		cmbEst.addItem("ES");
+		cmbEst.addItem("GO");		cmbEst.addItem("MA");
+		cmbEst.addItem("MT");		cmbEst.addItem("MS");
+		cmbEst.addItem("MG");		cmbEst.addItem("PA");
+		cmbEst.addItem("PB");		cmbEst.addItem("PR");
+		cmbEst.addItem("PE");		cmbEst.addItem("PI");
+		cmbEst.addItem("RJ");		cmbEst.addItem("RN");
+		cmbEst.addItem("RS");		cmbEst.addItem("RO");
+		cmbEst.addItem("RR");		cmbEst.addItem("SC");
+		cmbEst.addItem("SP");		cmbEst.addItem("SE");
+		cmbEst.addItem("TO");	
+		
 		
 		paine.add(lblCel);
 		lblCel.setBounds(350, 220 , 80, 40);
