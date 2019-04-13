@@ -45,7 +45,7 @@ public class ProjetoCadastro extends JFrame {
 	JRadioButton[] rdbsexo = new JRadioButton[2];
 	ButtonGroup grupo = new ButtonGroup();{
 		
-		rdbsexo[0] = new JRadioButton("Masculinho");
+		rdbsexo[0] = new JRadioButton("Masculino");
 		rdbsexo[1] = new JRadioButton("Feminino");
 		
 		
@@ -78,7 +78,7 @@ public class ProjetoCadastro extends JFrame {
 	
 	
 	
-	//view.PessoaFisica pessoaFisica = new view.PessoaFisica();
+	view.PessoaFisica pessoaFisica = new view.PessoaFisica();
 	
 	
 	
@@ -219,15 +219,16 @@ public class ProjetoCadastro extends JFrame {
 		
 		paine.add(btnSalvar);
 		btnSalvar.setBounds(240, 320, 120, 40);
-		btnSalvar.addActionListener(new ActionListener() {
-			
-			
-			public void actionPerformed(ActionEvent e) {
-				ProjetoCadastro.setNome(txtNome.getText());
-				
-				
-			}
-		});
+		btnSalvar.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					pessoaFisica.setNome(txtNome.getText());
+					pessoaFisica.setEnd(txtEnd.getText());
+					pessoaFisica.setRg(txtRg.getText());
+					pessoaFisica.setCpf(txtCpf.getText());
+				}
+			});
+		
+		
 		
 		
 		paine.add(btnImprimir);
@@ -246,7 +247,7 @@ public class ProjetoCadastro extends JFrame {
 	
 	public static void main(String[] args) {
 		ProjetoCadastro calc = new ProjetoCadastro();
-
+		
 	}
 
 }

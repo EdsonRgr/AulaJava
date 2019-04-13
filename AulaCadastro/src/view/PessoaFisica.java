@@ -3,8 +3,7 @@ package view;
 	
 
 	public class PessoaFisica {
-		private String nome;
-		private int rg, cpf, idade ;
+		private String nome, rg, cpf, end;
 
 
 		public String getNome() {
@@ -14,20 +13,32 @@ package view;
 			this.nome = nome;
 		}
 		
-		public int getRg() {
+		public String getRg() {
 			return rg ;
 		}
 		
-		public void setRg(int rg) {
+		public void setRg(String rg) {
 			this.rg = rg ;
 		}
 		
-		public int getcpf() {
+		public String getcpf() {
 			return cpf ;
 		}
-		public void setCpf(int cpf) {
+		public void setCpf(String cpf) {
 			this.cpf = cpf ;
 		}
+		
+		
+		public String getEnd() {
+			return end;
+		}
+		
+		public void setEnd (String end) {
+			this.end = end ;
+		}
+		
+		
+		
 		
 	}
 
